@@ -24,7 +24,7 @@ const Cards = () => {
             {InfoCards.map((card, index) => (
                 <div key={index} className="flex flex-col items-center">
 {/* CIRUCLO */}
-                    <div className="absolute z-10 rounded-full flex items-center justify-center bg-[#1A2F47] w-20 h-20 border-[#597FAC] border-4">
+                    <div className="absolute z-10 rounded-full flex items-center justify-center bg-[#1A2F47] w-20 h-20 border-[#597FAC] border-2">
                         {card.icono}
                     </div>
 
