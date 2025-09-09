@@ -1,7 +1,56 @@
+"use client"
+import Form from "@/components/contacto/Form"
+import { Mail, Phone } from "lucide-react"
+
 const Contacto = () => {
     return(
-        <div className="pt-14">
-            <h1>CONTACTOS</h1>
+        <div className="pt-14 bg-[#1A2F47]">
+            <div className="mt-16 text-center">
+                <h1 className="text-[#4A90E2] text-4xl">Póngase en contacto con nosotros</h1>
+                <h2 className="mt-3 text-xl text-white">Puede comunicarse a través de los siguientes medios</h2>
+            </div>
+            <div className="grid grid-cols-2 mt-16">
+                <div className="flex flex-col gap-6 px-20">
+
+                    <a 
+                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:h-24 transition ease-in hover:bg-[#284669]"
+                        href={`https://wa.me/5491140864329?text=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="bg-[#356CAC] rounded-xl w-12 h-12 flex justify-center items-center">
+                            <Phone className="text-white"/>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="font-bold text-white">Télefono</span>
+                            <span className="text-[#AAAAAA]">11 1234 5678</span>
+                        </div>
+                    </a>
+
+                    <a 
+                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:h-24 transition ease-in-out hover:bg-[#284669]"
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=morenakiaramartin@gmail.com&su=${encodeURIComponent("Consulta")}&body=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                    >
+                        <div className="bg-[#356CAC] rounded-xl w-12 h-12 flex justify-center items-center">
+                            <Mail className="text-white"/>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="font-bold text-white">Correo Electrónico </span>
+                            <span className="text-[#AAAAAA]">ascensoresmg@gmail.com</span>
+                        </div>
+                    </a>
+
+                </div>
+                <div>
+                    <div className="bg-[#1F3958] h-fit pb-6 w-[600px] rounded-2xl flex flex-col px-4 gap-4 items-center">
+                        <h3 className="mt-6 text-white">O bien, complete el siguiente formulario</h3>
+                        <Form />
+                        <span className="text-sm text-[#D0D0D0] text-center">“Respondemos consultas dentro de las 24 h hábiles. Muchas gracias por su interés.”</span>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
