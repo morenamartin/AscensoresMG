@@ -16,9 +16,9 @@ const Navbar = () => {
 
     return(
         <div className="flex flex-row items-center justify-between z-30 w-[100%] bg-white px-28 h-14 fixed">
-            <a href="/">
+            <Link href="/">
                 <Image width={50} height={50} src={logo} alt="logo"/>
-            </a>
+            </Link>
             <div className="flex flex-row gap-8 text-sm">
                {links.map((link) => (
                 <Link

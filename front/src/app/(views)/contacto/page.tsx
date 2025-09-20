@@ -13,7 +13,7 @@ const Contacto = () => {
                 <div className="flex flex-col gap-6 px-20">
 
                     <a 
-                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:h-24 transition ease-in hover:bg-[#284669]"
+                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:scale-105 transition ease-in hover:bg-[#284669]"
                         href={`https://wa.me/5491140864329?text=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -28,7 +28,7 @@ const Contacto = () => {
                     </a>
 
                     <a 
-                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:h-24 transition ease-in-out hover:bg-[#284669]"
+                        className="bg-[#1F3958] h-20 w-[540px] rounded-2xl flex flex-row px-4 gap-4 items-center hover:scale-105 transition ease-in hover:bg-[#284669]"
                         href={`https://mail.google.com/mail/?view=cm&fs=1&to=morenakiaramartin@gmail.com&su=${encodeURIComponent("Consulta")}&body=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
                         target="_blank"
                         rel="noopener noreferrer" 

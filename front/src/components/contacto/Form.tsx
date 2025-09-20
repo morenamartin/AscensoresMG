@@ -1,8 +1,9 @@
 "use client"
 import { Send } from "lucide-react"
 import Input from "./Input"
-import { ErrorMessage, Field, Formik } from "formik"
+import { Field, Formik } from "formik"
 import * as Yup from "yup";
+import axios from "axios";
 
 interface Values {
   name: string;
@@ -25,6 +26,27 @@ const Form = () => {
         consulta: Yup.string()
             .required("La consulta es obligatoria"),
     });
+
+    const sendMail = async (values: Values) => {
+        const body = {
+            "name": values.name,
+            "email": values.email,
+            "phone": values.phone,
+            "empresa": values.empresa,
+            "consulta": values.consulta
+        }
+
+        try {
+            await axios.post("http://localhost:3000/api/email/send", body)
+            console.log("El body se envio correctamente", body)
+
+        } catch(error: any) {
+            console.log("Error al mandar desde el front", error.message)
+        }
+
+    }
+
+
     return (
         <div className="w-[100%] h-fit pt-4">
         <Formik
@@ -38,8 +60,8 @@ const Form = () => {
             validationSchema={validationSchema}
             onSubmit={(values: Values, { setSubmitting }) => {
                 alert("Enviado")
-                alert(JSON.stringify(values, null, 2));
-                setSubmitting(false);
+                sendMail(values)
+
             }}
             >
             {({ isSubmitting, values, handleSubmit, errors, touched }) => (
@@ -63,7 +85,7 @@ const Form = () => {
 
                 <div className="flex flex-row justify-center gap-6">
                     <div className="flex flex-col">
-                        <Field as={Input} name="phone" id="phone" value={values.phone} placeholder="Telefono"/>
+                        <Field as={Input} name="phone" id="phone" placeholder="Telefono"/>
                         {errors.phone && touched.phone ? (
                             <div className="mt-1 ml-3 text-sm text-red-600">{errors.phone}</div>
                         ) : null}
@@ -86,7 +108,7 @@ const Form = () => {
                         ) : null}
                     </div>
 
-                <button type="submit" disabled={isSubmitting} className="flex flex-row items-center gap-2 bg-[#3B6BBF] hover:bg-[#2e63be] py-1 rounded-lg justify-center text-white">
+                <button type="submit" disabled={isSubmitting} className={`${isSubmitting ? "bg-[#18325f] hover:bg-none" : "bg-[#3B6BBF] hover:bg-[#2e63be]"} flex flex-row items-center gap-2  py-1 rounded-lg justify-center text-white`}>
                     <Send />
                     Enviar consulta    
                 </button>          
