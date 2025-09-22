@@ -1,5 +1,4 @@
 import Image from "next/image"
-import logo from "../assets/logo.png"
 import { Mail, MapPin, Phone } from "lucide-react"
 
 const contactos = [
