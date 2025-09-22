@@ -16,7 +16,7 @@ const WhatsApp =  () => {
     return(
         <a
             className={`
-                fixed p-2 z-50 bg-white  border-2 border-black rounded-full h-14 bottom-4 right-4
+                fixed p-2 z-50 bg-white  border-2 border-black  rounded-full h-14 bottom-4 right-4
                 transition-all duration-700 overflow-hidden cursor-pointer
                 ${transition ? "w-fit px-2 ease-in" : "w-14 justify-center"}
             `}   
