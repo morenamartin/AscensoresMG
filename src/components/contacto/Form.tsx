@@ -7,7 +7,6 @@ import axios from "axios";
 import { useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { usePathname } from "next/navigation";
 
 interface Values {
   name: string;
@@ -19,7 +18,6 @@ interface Values {
 
 const Form = () => {
     const [loading, setLoading] = useState(false)
-    const pathname = usePathname()
 
     const validationSchema = Yup.object({
         name: Yup.string()
@@ -61,7 +59,8 @@ const Form = () => {
                 })
             })
             resetForm()
-        } catch(error: any) {
+        } catch(error) {
+            console.log(error)
             toast.error("Hubo un error al mandar la consulta", {
                 position: "top-right",
                 hideProgressBar: true,
