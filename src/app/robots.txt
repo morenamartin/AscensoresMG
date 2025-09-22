@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ascensores-mg.vercel.app/sitemap.xml
