@@ -45,7 +45,7 @@ const Form = () => {
         setLoading(true)
 
         try {
-            await axios.post("http://localhost:3000/send-email", body)
+            await axios.post("https://mail-ascensores.onrender.com/send-email", body)
             .then(response => {
                 toast.success(`${response.data.message}`, {
                     position: "top-right",
