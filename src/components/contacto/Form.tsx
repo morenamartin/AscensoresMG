@@ -7,6 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { usePathname } from "next/navigation";
 
 interface Values {
   name: string;
@@ -18,6 +19,7 @@ interface Values {
 
 const Form = () => {
     const [loading, setLoading] = useState(false)
+    const pathname = usePathname()
 
     const validationSchema = Yup.object({
         name: Yup.string()
