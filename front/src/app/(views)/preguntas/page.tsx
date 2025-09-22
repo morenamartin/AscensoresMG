@@ -20,11 +20,11 @@ const customTheme = createTheme({
 
 const Preguntas = () => {
     return(
-        <div className="py-32 bg-[#1A2F47] min-h-screen">
+        <div className="pt-32 lg:py-32 bg-[#1A2F47] h-fit pb-16 lg:min-h-screen">
             <h1 className="text-4xl text-[#58A9FF] text-center mb-16">PREGUNTAS FRECUENTES</h1>
 
 <ThemeProvider theme={customTheme}>
-    <div className="w-[60%] m-auto space-y-6">
+    <div className="w-[90%] lg:w-[60%] m-auto space-y-6">
         <Accordion>
 
         <AccordionPanel>

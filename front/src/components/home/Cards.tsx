@@ -20,9 +20,9 @@ const InfoCards = [
 
 const Cards = () => {
     return (
-        <div className="absolute z-10 flex flex-row items-center gap-20 top-[450px]">
+        <div className="absolute z-10 flex flex-col top-48 md:top-60 ml-6 md:ml-10 lg:flex lg:flex-row lg:items-center gap-20 lg:top-[450px]">
             {InfoCards.map((card, index) => (
-                <div key={index} className="flex flex-col items-center">
+                <div key={index} className="flex flex-col items-start lg:items-center">
 {/* CIRUCLO */}
                     <div className="absolute z-10 rounded-full flex items-center justify-center bg-[#1A2F47] w-20 h-20 border-[#597FAC] border-2">
                         {card.icono}
@@ -30,9 +30,9 @@ const Cards = () => {
 
 {/* CARTA */}
                     <div className="relative z-0 top-10 bg-[#1A2F47] w-72 h-[240px] pt-16 shadow-lg shadow-gray-900">
-                        <div className="flex flex-col text-center">
+                        <div className="flex flex-col px-4 text-start lg:text-center">
                             <span className="text-[22px] font-bold text-[#B7B7B7]">{card.titulo}</span>
-                            <p className="text-[#A3A3A3] mt-6 font-medium px-2 text leading-5">{card.parrafo}</p>
+                            <p className="text-[#A3A3A3] mt-6 font-medium lg:px-2 text leading-5">{card.parrafo}</p>
                         </div>
                     </div>
                 </div>

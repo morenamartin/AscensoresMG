@@ -1,9 +1,12 @@
 "use client"
 import { Send } from "lucide-react"
 import Input from "./Input"
-import { Field, Formik } from "formik"
+import { Field, Formik, FormikHelpers } from "formik"
 import * as Yup from "yup";
 import axios from "axios";
+import { useState } from "react";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Values {
   name: string;
@@ -14,6 +17,8 @@ interface Values {
 }
 
 const Form = () => {
+    const [loading, setLoading] = useState(false)
+
     const validationSchema = Yup.object({
         name: Yup.string()
             .required("El nombre es obligatorio"),
@@ -27,8 +32,9 @@ const Form = () => {
             .required("La consulta es obligatoria"),
     });
 
-    const sendMail = async (values: Values) => {
+    const sendMail = async (values: Values, { resetForm }: FormikHelpers<Values>) => {
         const body = {
+            "to": values.email,
             "name": values.name,
             "email": values.email,
             "phone": values.phone,
@@ -36,12 +42,28 @@ const Form = () => {
             "consulta": values.consulta
         }
 
-        try {
-            await axios.post("http://localhost:3000/api/email/send", body)
-            console.log("El body se envio correctamente", body)
+        setLoading(true)
 
+        try {
+            await axios.post("http://localhost:3000/send-email", body)
+            .then(response => {
+                toast.success(`${response.data.message}`, {
+                    position: "top-right",
+                    hideProgressBar: true,
+                    draggable: true,
+                    autoClose: 60000,
+                })
+            })
+            resetForm()
         } catch(error: any) {
-            console.log("Error al mandar desde el front", error.message)
+            toast.error("Hubo un error al mandar la consulta", {
+                position: "top-right",
+                hideProgressBar: true,
+                draggable: true,
+                autoClose: 60000,
+            })
+        }finally {
+            setLoading(false)
         }
 
     }
@@ -49,6 +71,7 @@ const Form = () => {
 
     return (
         <div className="w-[100%] h-fit pt-4">
+            <ToastContainer className="mt-14"/>
         <Formik
             initialValues={{
                 name: "",
@@ -58,47 +81,46 @@ const Form = () => {
                 consulta: ""
             }}
             validationSchema={validationSchema}
-            onSubmit={(values: Values, { setSubmitting }) => {
-                alert("Enviado")
-                sendMail(values)
-
+            onSubmit={(values: Values, resetForm: FormikHelpers<Values>) => {
+                sendMail(values, resetForm)
             }}
             >
-            {({ isSubmitting, values, handleSubmit, errors, touched }) => (
+            {({ isSubmitting, handleSubmit, errors, touched }) => (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
                 
-                <div className="flex flex-row justify-center gap-6">
+                <div className="flex flex-col justify-center gap-6 md:flex-row">
                     <div className="flex flex-col">
-                        <Field as={Input} name="name" id="name" placeholder="Escribí tu nombre"/>
+                        <Field as={Input} name="name" id="name" placeholder="Escribí tu nombre" disabled={isSubmitting}/>
                         {errors.name && touched.name ? (
                             <div className="mt-1 ml-3 text-sm text-red-600">{errors.name}</div>
                         ) : null}
                     </div>
                     <div className="flex flex-col">
-                        <Field as={Input} name="email" id="email" placeholder="Correo electrónico"/>
+                        <Field as={Input} name="email" id="email" placeholder="Correo electrónico" disabled={isSubmitting}/>
                         {errors.email && touched.email ? (
                             <div className="mt-1 ml-3 text-sm text-red-600">{errors.email}</div>
                         ) : null}
                     </div>
                 </div>
 
-                <div className="flex flex-row justify-center gap-6">
+                <div className="flex flex-col justify-center gap-6 md:flex-row">
                     <div className="flex flex-col">
-                        <Field as={Input} name="phone" id="phone" placeholder="Telefono"/>
+                        <Field as={Input} name="phone" id="phone" placeholder="Telefono" disabled={isSubmitting}/>
                         {errors.phone && touched.phone ? (
                             <div className="mt-1 ml-3 text-sm text-red-600">{errors.phone}</div>
                         ) : null}
                     </div>
                     <div>
-                        <Field as={Input} name="empresa" id="empresa" placeholder="Empresa (opcional)"/>   
+                        <Field as={Input} name="empresa" id="empresa" placeholder="Empresa (opcional)" disabled={isSubmitting} />   
                     </div>
                 </div>
 
                     <div className="flex flex-col">
                         <Field
+                            disabled={isSubmitting}
                             placeholder="Escriba su consulta o mensaje"
-                            as="textarea"
+                            as={"textarea"}
                             name="consulta"
                             id="consulta"
                             className="p-2 resize-none h-36 rounded-xl"
@@ -109,8 +131,10 @@ const Form = () => {
                     </div>
 
                 <button type="submit" disabled={isSubmitting} className={`${isSubmitting ? "bg-[#18325f] hover:bg-none" : "bg-[#3B6BBF] hover:bg-[#2e63be]"} flex flex-row items-center gap-2  py-1 rounded-lg justify-center text-white`}>
-                    <Send />
-                    Enviar consulta    
+                    {loading ? <span>Enviando...</span> :
+                    <>
+                        <Send /> Enviar consulta    
+                    </>}
                 </button>          
             </div>
         </form>

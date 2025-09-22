@@ -1,5 +1,4 @@
 import Image from "next/image"
-import imagenFondo from "../../../assets/imagenQuienesSOmos.png"
 import { Building2, ClipboardCheck, TrendingUp, Wrench } from "lucide-react"
 
 const cartitas = [
@@ -25,7 +24,9 @@ const QuienesSomos = () => {
     return (
         <>
             <div className="relative pt-14">
-                <Image src={imagenFondo} className="w-full" alt="fondo"/>
+                <Image src="/fondo-quienessomos.jpg" width={1000} height={3000} className="w-full " alt="fondo"/>
+
+                <div className="absolute top-0 w-full h-full bg-black/80"></div>
 
                 <div className="absolute z-10 w-full top-36">
 

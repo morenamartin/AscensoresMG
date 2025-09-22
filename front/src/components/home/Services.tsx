@@ -67,7 +67,7 @@ const Services = () => {
     return (
         <div className="w-full pt-20 pb-20 text-center h-fit bg-[#F4F4F4]">
             <h1 className="text-3xl font-bold text-[#193C91]">NUESTROS SERVICIOS</h1>
-            <div className="grid grid-cols-1 mt-6 md:grid-cols-3 px-14 justify-items-center">
+            <div className="grid grid-cols-1 mt-6 md:grid-cols-2 lg:grid-cols-3 px-14 justify-items-center">
                 <ServicesCard />
             </div>
         </div>
