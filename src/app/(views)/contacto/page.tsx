@@ -13,7 +13,7 @@ const Contacto = () => {
     return(
         <div className="pt-14 bg-[#1A2F47]">
             <div className="mt-16 text-center">
-                <h1 className="text-[#4A90E2] text-4xl">Póngase en contacto con nosotros</h1>
+                <h1 className="text-[#4A90E2] text-4xl px-2">Póngase en contacto con nosotros</h1>
                 <h2 className="mt-3 text-xl text-white">Puede comunicarse a través de los siguientes medios</h2>
             </div>
             <div className="flex flex-col items-center gap-20 pb-16 mt-16 lg:gap-0 lg:grid lg:grid-cols-2 lg:items-start">
