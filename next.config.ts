@@ -1,6 +1,14 @@
+// next.config.js
 import type { NextConfig } from "next";
-import withFlowbiteReact from "flowbite-react/plugin/nextjs";
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // tus opciones aquí (si las tienes, como images, redirects, etc.)
+  // si no tienes nada más, déjalo vacío
 };
+
+// 👇 IMPORTANTE: exporta la configuración envuelta
+export default withBundleAnalyzer(nextConfig);
