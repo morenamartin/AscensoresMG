@@ -28,7 +28,11 @@ const Form = () => {
             .email("Debe ser un email válido")
             .required("El correo es obligatorio"),
         phone: Yup.string()
-            .required("El teléfono es obligatorio"),
+        .matches(
+            /^(\+54)?\s?(9)?\s?\d{2,4}\s?\d{6,8}$/,
+            "Debe ser un teléfono válido"
+        )
+        .required("El teléfono es obligatorio"),
         empresa: Yup.string(),
         consulta: Yup.string()
             .required("La consulta es obligatoria"),

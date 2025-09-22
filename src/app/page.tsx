@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* Imagen y textos para pantallas grandes */}
       <div className="relative hidden pt-14 lg:block">
-        <Image src="/imagenHome.png" width={2000} height={2000} alt="fondo" />
+        <Image src="/fondoHome.jpg" width={2000} height={2000} alt="fondo" />
         <h1 className="absolute font-bold text-[#FAFAFA] text-4xl md:text-6xl lg:text-7xl  right-2 md:top-40 md:right-4 lg:right-28">
           Ascensores MG <span className="text-2xl md:text-4xl lg:text-5xl">srl</span>
         </h1>
