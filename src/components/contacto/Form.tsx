@@ -45,7 +45,7 @@ const Form = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://mail-ascensores.onrender.com/send-email", {
+      const response = await fetch("https://mail-ascensores.vercel.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

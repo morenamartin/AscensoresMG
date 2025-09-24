@@ -29,7 +29,7 @@ export default function Home() {
       </div>
 
       {/* Imagen y textos para pantallas chicas */}
-      <div className="relative block pt-14 h-[140vh] md:hidden">
+      <div className="relative block pt-14 h-[155vh] sm:h-[140vh] md:hidden">
         <Image src="/1.jpg" fill alt="fondo móvil" />
         <h1 className="absolute font-bold text-[#FAFAFA] text-[40px] top-24 right-2">
           Ascensores MG <span className="text-xl">srl</span>
