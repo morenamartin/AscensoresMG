@@ -4,11 +4,11 @@ import { Mail, MapPin, Phone } from "lucide-react"
 const contactos = [
     {
         icono: <Phone className="text-[#4A90E2]"/>,
-        contacto: "11 1234 5678"
+        contacto: "11 4429 9037"
     },
     {
         icono: <Mail className="text-[#4A90E2]"/>,
-        contacto: "ascensoresmg@gmail.com"
+        contacto: "ascensoresmg@hotmail.com"
     },
     {
         icono: <MapPin className="text-[#4A90E2]"/>,

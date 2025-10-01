@@ -26,7 +26,7 @@ const WhatsApp =  () => {
                 minWidth: transition ? 260 : 56,
                 maxWidth: transition ? 400 : 56,
             }}
-            href={`https://wa.me/5491140864329?text=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
+            href={`https://wa.me/5491144299037?text=${encodeURIComponent("Hola, quería consultarte sobre...")}`}
             target="_blank"
             rel="noopener noreferrer"
         >
