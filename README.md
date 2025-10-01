@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛗 Ascensores MG - Sitio Web Oficial
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-15+-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
-First, run the development server:
+> **Sitio web institucional de Ascensores MG SRCL**  
+> Presentamos de forma clara, profesional y moderna los servicios de instalación, mantenimiento y modernización de ascensores para edificios residenciales, comerciales e industriales.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Vista previa
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+El sitio está desplegado en **Vercel** y pronto estará disponible en su dominio oficial.  
+🔗 **[Ver demo en vivo (próximamente)](https://ascensores-mg.vercel.app/)** *(en espera de autorización de dominio)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Características
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Diseño **responsive** y optimizado para móviles
+- 🎨 Interfaz limpia, profesional y enfocada en la experiencia del cliente
+- 📩 Formulario de contacto con validación en tiempo real (usando `react-hook-form` + `zod`)
+- 📬 Envío de mensajes directamente al equipo de Ascensores MG
+- ⚡ Integración con **Vercel Speed Insights** para monitoreo de rendimiento
+- 🧪 Escrito en **TypeScript** para mayor robustez y mantenibilidad
+- 🎯 Estilizado con **Tailwind CSS** y componentes de **Flowbite React**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tecnologías utilizadas
 
-## Deploy on Vercel
+- **Frontend**: [React 19](https://react.dev/) + [Next.js 15](https://nextjs.org/)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/) + [Flowbite React](https://flowbite-react.com/)
+- **Validación de formularios**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Iconos**: [Lucide React](https://lucide.dev/)
+- **Notificaciones**: [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- **Despliegue**: [Vercel](https://vercel.com/)
+- **Tipado**: [TypeScript](https://www.typescriptlang.org/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
