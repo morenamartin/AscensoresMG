@@ -17,6 +17,7 @@ const formSchema = z.object({
     .regex(/^(\+54)?\s?(9)?\s?\d{2,4}\s?\d{6,8}$/, "Debe ser un teléfono válido")
     .min(1, "El teléfono es obligatorio"),
   empresa: z.string().optional(),
+  domicilio: z.string().min(2, "El domicilio es obligatorio"),
   consulta: z.string().min(10, "La consulta es obligatoria"),
 });
 
@@ -37,6 +38,7 @@ const Form = () => {
       email: "",
       phone: "",
       empresa: "",
+      domicilio: "",
       consulta: "",
     },
   });
@@ -131,11 +133,24 @@ const Form = () => {
             <input
               {...register("empresa")}
               type="text"
-              placeholder="Empresa (opcional)"
+              placeholder="Empresa/Administración (opcional)"
               disabled={isSubmitting}
               className="p-2 rounded-xl bg-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B6BBF]"
             />
           </div>
+        </div>
+
+        <div className="flex flex-col mt-5 md:mt-0">
+          <input
+            {...register("domicilio")}
+            type="text"
+            placeholder="Domicilio"
+            disabled={isSubmitting}
+            className="p-2 rounded-xl bg-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B6BBF]"
+          />
+          {errors.domicilio && (
+            <div className="mt-1 ml-3 text-sm text-red-400">{errors.domicilio.message}</div>
+          )}
         </div>
 
         {/* Consulta */}

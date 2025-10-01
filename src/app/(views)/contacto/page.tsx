@@ -30,7 +30,7 @@ const Contacto = () => {
                         </div>
                         <div className="flex flex-col">
                             <span className="font-bold text-white">Télefono</span>
-                            <span className="text-gray-400">11 1234 5678</span>
+                            <span className="text-gray-400">11 4429 9037</span>
                         </div>
                     </a>
                         <a 
@@ -44,7 +44,7 @@ const Contacto = () => {
                         </div>
                         <div className="flex flex-col">
                             <span className="font-bold text-white">Correo Electrónico </span>
-                            <span className="text-[#AAAAAA]">ascensoresmg@gmail.com</span>
+                            <span className="text-[#AAAAAA]">ascensoresmg@hotmail.com</span>
                         </div>
                     </a>
 
