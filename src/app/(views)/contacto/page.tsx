@@ -53,7 +53,7 @@ const Contacto = () => {
                     <div className="bg-[#1F3958] h-fit pb-6 w-[350px] md:w-[800px] lg:w-[600px] rounded-2xl flex flex-col px-4 gap-4 items-center">
                         <h3 className="mt-6 text-white">O bien, complete el siguiente formulario</h3>
                         <Form />
-                        <span className="text-sm text-center text-gray-300">“Respondemos consultas dentro de las 24 h hábiles. Muchas gracias por su interés.”</span>
+                        <span className="text-sm text-center text-gray-300">Respondemos consultas dentro de las 24 hs hábiles. Muchas gracias por su interés.</span>
                     </div>
                 </div>
             </div>

@@ -58,13 +58,13 @@ const Cartitas = () => {
             {sections.map((section) => (
             <div
                 key={section.key}
-                className={`${section.transition ? "opacity-100 duration-700 ease-in" : "opacity-0"} flex flex-col gap-4 px-4 md:px-10 ${section.border ? "border-b-2 lg:border-b-[#1A2F47] lg:border-r-2 pb-12 border-[#4B86C5]" : ""}`}
+                className={`${section.transition ? "opacity-100 duration-700 ease-in" : "opacity-0"} flex items-center flex-col gap-4 px-4 md:px-10 ${section.border ? "border-b-2 lg:border-b-[#1A2F47] lg:border-r-2 pb-12 border-[#4B86C5]" : ""}`}
             >
                 <h1 className="text-xl font-bold text-white w-fit">
                 {section.title}
                 <div className="border-b-2 border-[#193C91] w-full"></div>
                 </h1>
-                <p className="text-base font-semibold text-center text-white md:text-start">
+                <p className="text-base font-semibold text-center text-white">
                 {section.text}
                 </p>
             </div>
