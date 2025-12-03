@@ -7,7 +7,7 @@ import sutecba from "../../assets/empresas/sutecba.png"
 const Empresas = () => {
     return (
         <div className="flex flex-col items-center pb-12 text-center">
-            <h2 className="font-bold text-[#193C91] px-5 md:px-0 my-10 text-lg">ALGUNAS EMPRESAS QUE CONFIAN EN NOSOTROS</h2>
+            <h2 className="font-bold text-[#193C91] px-5 md:px-0 my-10 text-lg">ALGUNAS EMPRESAS QUE CONFÍAN EN NOSOTROS</h2>
             <div className="grid grid-cols-2 gap-20 px-10 md:px-0 lg:grid-cols-4">
                 <Image src={sweet} alt="sweet" width={180} className="duration-300 ease-in-out scale-100 hover:scale-110"/>
                 <Image src={flexelo} alt="flexelo" width={180} className="duration-300 ease-in-out scale-100 hover:scale-110"/>

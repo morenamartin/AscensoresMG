@@ -26,7 +26,7 @@ const QuienesSomos = () => {
         <div className={`relative pt-14 pb-44 h-fit bg-[#1A2F47]`}>`
 
                 <div className="flex flex-col items-center justify-center mt-10">
-                    <h1 className="text-3xl text-[#58A9FF] font-semibold">¿QUIENES SOMOS?</h1>
+                    <h1 className="text-3xl text-[#58A9FF] font-semibold">¿QUIÉNES SOMOS?</h1>
                     <div className="border-b-2 bg-[#4B86C5] border-blue-400 w-[70px]"></div>
                 </div>
 

@@ -92,7 +92,7 @@ const Form = () => {
             <input
               {...register("name")}
               type="text"
-              placeholder="Escribí tu nombre"
+              placeholder="Nombre"
               disabled={isSubmitting}
               className="p-2 rounded-xl bg-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B6BBF]"
             />
@@ -157,7 +157,7 @@ const Form = () => {
         <div className="flex flex-col">
           <textarea
             {...register("consulta")}
-            placeholder="Escriba su consulta o mensaje"
+            placeholder="Consulta o mensaje"
             disabled={isSubmitting}
             className="p-2 resize-none h-36 rounded-xl bg-white/10 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B6BBF]"
           />

@@ -8,15 +8,15 @@ export default function Home() {
   return (
     <>
       {/* Imagen y textos para pantallas grandes */}
-      <div className="relative hidden pt-14 lg:block">
-        <Image src="/fondoHome.jpg" width={2000} height={2000} alt="fondo" />
-        <h1 className="absolute font-bold text-[#FAFAFA] text-4xl md:text-6xl lg:text-7xl  right-2 md:top-40 md:right-4 lg:right-28">
-          Ascensores MG <span className="text-2xl md:text-4xl lg:text-5xl">srl</span>
-        </h1>
-        <h3 className="absolute md:text-2xl lg:text-3xl font-bold text-[#4B617A] top-32 md:top-60 right-2 md:right-4 lg:right-28">
-          Mantenimiento de ascensores
-        </h3>
-      </div>
+        <div className="relative hidden pt-14 lg:block">
+          <Image src="/fondoHome.jpg" width={2000} height={2000} alt="fondo" />
+          <h1 className="absolute font-bold text-[#FAFAFA] text-4xl md:text-6xl lg:text-7xl right-2 md:top-40 md:right-4 lg:right-28 text-right">
+            Ascensores MG <span className="text-2xl md:text-4xl lg:text-5xl">srl</span>
+          </h1>
+          <h3 className="absolute md:text-2xl lg:text-3xl font-bold text-[#ffffff] top-32 md:top-60 right-2 md:right-4 lg:right-28 text-right">
+            Mantenimiento de ascensores
+          </h3>
+        </div>
 
       <div className="relative hidden pt-14 md:block md:h-[85vh] md:overflow-hidden lg:hidden">
         <Image src="/2.jpg" width={1000} height={1000} alt="fondo" />
@@ -31,10 +31,10 @@ export default function Home() {
       {/* Imagen y textos para pantallas chicas */}
       <div className="relative block pt-14 h-[155vh] sm:h-[140vh] md:hidden">
         <Image src="/1.jpg" fill alt="fondo móvil" />
-        <h1 className="absolute font-bold text-[#FAFAFA] text-[40px] top-24 right-2">
+        <h1 className="absolute font-bold text-[#FAFAFA] text-[40px] top-24 left-1/2 -translate-x-1/2 text-center w-full">
           Ascensores MG <span className="text-xl">srl</span>
         </h1>
-        <h3 className="absolute text-xl font-bold text-[#4B617A] top-36 right-2">
+        <h3 className="absolute text-xl font-bold text-[#ffffff] top-36 left-1/2 -translate-x-1/2 text-center w-full">
           Mantenimiento de ascensores
         </h3>
       </div>

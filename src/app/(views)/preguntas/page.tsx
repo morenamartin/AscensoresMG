@@ -1,3 +1,4 @@
+"use client"
 import { Accordion, createTheme, ThemeProvider } from "flowbite-react";
 import { AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
 
@@ -8,7 +9,7 @@ const customTheme = createTheme({
     base: "flex w-full items-center justify-between p-5 text-left font-medium !bg-[#1F3958] !text-white !outline-none !ring-0 !focus:outline-none !focus:ring-0",
     flush: { off: "", on: "" },
     open: { off: "", on: "" },
-    arrow: { base: "h-6 w-6 shrink-0 text-white !text-white", open: { off: "", on: "" } },
+    arrow: { base: "h-6 w-6 shrink-0 -rotate-90 text-white transition-transform duration-300", open: { off: "", on: "rotate-40" } },
     heading: ""
     },
     content: {
@@ -28,7 +29,9 @@ const Preguntas = () => {
         <Accordion>
 
         <AccordionPanel>
-            <AccordionTitle>1. ¿Cada cuánto tiempo se debe hacer el mantenimiento del ascensor?</AccordionTitle>
+            <AccordionTitle>
+                1. ¿Cada cuánto tiempo se debe hacer el mantenimiento del ascensor?
+            </AccordionTitle>
             <AccordionContent>
             <p className="pr-10 mb-4 text-gray-500 dark:text-gray-400">
                 Es obligatorio realizar mantenimiento mensual, de acuerdo con las normativas vigentes. Esto garantiza el correcto funcionamiento y la seguridad del equipo.
